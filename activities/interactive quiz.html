@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Quiz</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #quiz-container {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #intro {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    #question {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    #answer {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    #start-button, #submit-button {
+        font-size: 16px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<div id="quiz-container">
+    <div id="intro">Let's start the quiz!</div>
+    <button id="start-button">Start</button>
+    <div id="question-container" style="display: none;">
+        <div id="question"></div>
+        <input type="text" id="user-answer" placeholder="Enter your answer">
+        <button id="submit-button">Submit</button>
+    </div>
+</div>
+
+<script>
+    const questions = [
+        { question: "What is 2 + 2?", answer: "4" },
+        { question: "What is 5 + 5", answer: "10" },
+        { question: "Who is the author of 'Hamlet'?", answer: "William Shakespeare" },
+        { question: "What is the tallest mountain in the world?", answer: "Mount Everest" },
+        { question: "What is the chemical symbol for water?", answer: "H2O" }
+    ];
+
+    let currentQuestion = 0;
+
+    document.getElementById('start-button').addEventListener('click', startQuiz);
+
+    function startQuiz() {
+        document.getElementById('intro').style.display = "none";
+        document.getElementById('start-button').style.display = "none";
+        document.getElementById('question-container').style.display = "block";
+        displayQuestion();
+    }
+
+    function displayQuestion() {
+        document.getElementById('question').innerText = questions[currentQuestion].question;
+    }
+
+    document.getElementById('submit-button').addEventListener('click', checkAnswer);
+
+    function checkAnswer() {
+        const userAnswer = document.getElementById('user-answer').value.trim();
+        if (userAnswer.toLowerCase() === questions[currentQuestion].answer.toLowerCase()) {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                displayQuestion();
+                document.getElementById('user-answer').value = "";
+            } else {
+                alert("Congratulations! You've completed the quiz.");
+                resetQuiz();
+            }
+        } else {
+            alert("Wrong answer! Try again.");
+            currentQuestion = 0;
+            displayQuestion();
+            document.getElementById('user-answer').value = "";
+        }
+    }
+
+    function resetQuiz() {
+        currentQuestion = 0;
+        document.getElementById('question-container').style.display = "none";
+        document.getElementById('intro').style.display = "block";
+        document.getElementById('start-button').style.display = "block";
+    }
+</script>
+</body>
+</html>
+

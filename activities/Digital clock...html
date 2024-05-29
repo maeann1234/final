@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alarm Clock</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  #time {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Alarm Clock</h1>
+<div id="time"></div>
+<input type="time" id="alarmTime">
+<button onclick="setAlarm()">Set Alarm</button>
+
+<script>
+  function updateTime() {
+    let now = new Date();
+    let hours = now.getHours().toString().padStart(2, '0');
+    let minutes = now.getMinutes().toString().padStart(2, '0');
+    let seconds = now.getSeconds().toString().padStart(2, '0');
+    document.getElementById('time').textContent = hours + ':' + minutes + ':' + seconds;
+  }
+
+  function setAlarm() {
+    var alarmTime = document.getElementById('alarmTime').value;
+    
+    
+    var [alarmHours, alarmMinutes] = alarmTime.split(':');
+    var alarm = new Date();
+    alarm.setHours(alarmHours);
+    alarm.setMinutes(alarmMinutes);
+    alarm.setSeconds(0);
+
+    setInterval(function() {
+      var now = new Date();
+      if (now.getHours() === alarm.getHours() && now.getMinutes() === alarm.getMinutes()) {
+        alert('its time to wake up na gwapa!');
+        clearInterval(timeOut);
+      }
+    }, 1000);
+  }
+
+  updateTime();
+  let timeOut = setInterval(updateTime, 1000);
+</script>
+
+</body>
+</html>

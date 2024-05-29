@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.input-section {
+  margin-bottom: 20px;
+}
+
+.task-list {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.task {
+  margin-bottom: 10px;
+}
+
+.delete-btn {
+  color: red;
+  cursor: pointer;
+}
+

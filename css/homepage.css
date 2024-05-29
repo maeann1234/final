@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+
+
+html,body{
+    width: 100vw;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    overflow-y: scroll;
+    font-family: 'Josefin Sans', sans-serif!important;
+}
+/*Navbar css*/
+.nav-item{
+    margin-left: 35px;
+    font-size: 1.5rem;
+    padding: 10px;
+    position: relative;
+} 
+a{
+    padding: 0 5px;
+}
+.nav-link:after{
+    content: '';
+    position: absolute;
+    background-color: rgb(124, 0, 106);
+    text-align: center;
+    height: 5px;
+    width: 80%;
+    left: 10%;
+    bottom: 15px;
+    transform: scale(0, 1);
+    transition: 0.3s;
+}
+a:after{
+    transform: scale(1,1);
+    transition: transform 0.3s ease;
+}
+a:hover::after{
+    transform: scale(1,1);
+}
+.navtxt{
+    color: #86383B;
+}
+
+.navbar-nav{
+   padding-right: 20px;
+   flex-wrap: wrap;
+   display: inline-block;
+   position: relative;
+}
+.nav-link{
+    font-size: 2rem;
+}
+.navbar{
+    background-color: rgba(248,199,201, 0.8);
+    border: solid #2C1909 9px;
+}
+i{
+    color: #86383B;
+}
+.icon-bar1{
+    padding: 3px;
+    border-bottom: #2C1909 solid 4px;
+    width: 40px;
+}
+.icon-bar2{
+    padding: 3px;
+    border-bottom: #2C1909 solid 4px;
+    width: 40px;
+
+}
+.icon-bar3{
+    padding: 3px;
+    border-bottom: #2C1909 solid 4px;
+    width: 40px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1199px){
+    .nav-item{
+        font-size: 23px;
+    }
+}
+
+/*Home page css*/
+#home{
+    background-size: cover;
+    background-position: center;
+    background-image: url(./pictures/homepagebg.jpg);
+    padding-top: 120px;
+    height: 1000px;
+}
+.homecontainer{
+    margin-top: 10px;
+}
+.hometext1{
+    padding: 200px 0;
+}
+.hometext1 h2{
+    font-size: 40px;
+    text-shadow:4px 5px #302e2e36 ;
+}
+.hometext1 p{
+    font-size: 16px;
+    text-shadow:2px 2px #302e2e36 ;
+}
+.boxcontainer{
+    justify-content: center;
+}
+.homecontainer img{
+    width: 300px;
+    height: 300px;
+    border: rgba(248,199,201, 0.8) 15px solid;
+    border-radius: 20px;
+    box-shadow: 8px 8px rgba(229, 165, 167, 0.8);
+}
+.top{
+    text-align: center;
+}
+.top img{
+    margin: 10px;
+}
+.bot{
+    text-align: center;
+}
+.bot img{
+    margin: 10px;
+}

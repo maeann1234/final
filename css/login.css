@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #c1e5f7 0%, #a5a8f2 50%, #4d4b7c 100%);
+}
+
+#passcodeForm {
+    background-color: #f0f4ff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+#passcodeForm label {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#passcodeForm input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#passcodeForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #7c83db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#passcodeForm button:hover {
+    background-color: #5b6cc1;
+}
+
